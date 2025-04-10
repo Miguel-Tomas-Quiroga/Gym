@@ -192,19 +192,22 @@ header {
 
 .counter {
   display: inline-block;
-  animation: contar 3s ease-in-out forwards;
   opacity: 0;
+  animation: aparecer 2s ease-in forwards;
 }
 
-@keyframes contar {
+/* Animación para que aparezca */
+@keyframes aparecer {
   0% {
-    content: "0";
-    opacity: 1;
+    opacity: 0;
+    transform: scale(0.8);
   }
   100% {
-    content: "500+";
+    opacity: 1;
+    transform: scale(1);
   }
 }
+
 
 /* CARRUSEL DE TESTIMONIOS */
 .testimonios {
