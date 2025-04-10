@@ -874,3 +874,26 @@ footer h3 {
 .read-more:hover {
   color: #ff8787;
 }
+
+.error {
+  color: #e63946;
+  font-size: 0.85rem;
+  margin-top: 0.2rem;
+  display: block;
+}
+
+input:invalid,
+textarea:invalid {
+  border: 1px solid #e63946;
+}
+
+input:valid,
+textarea:valid {
+  border: 1px solid #4caf50;
+}
+
+.mensaje-exito {
+  color: #4caf50;
+  margin-top: 1rem;
+  font-weight: bold;
+}
