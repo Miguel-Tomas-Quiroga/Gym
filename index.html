@@ -1,0 +1,124 @@
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gimnasio Pro</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- HEADER CON MEGA MENÚ -->
+  <header>
+    <nav class="mega-menu">
+      <h1 class="logo">Gimnasio Pro</h1>
+      <input type="checkbox" id="menu-toggle" />
+      <label for="menu-toggle" class="menu-icon">☰</label>
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="clases.html" class="activo">Clases</a></li>
+        <li><a href="entrenadores.html">Entrenadores</a></li>
+        <li><a href="precios.html">Precios</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+      <button id="toggle-dark-mode" aria-label="Alternar modo oscuro">🌓</button>
+    </nav>
+  </header>
+
+  <!-- HERO CON VIDEO DE FONDO -->
+  <section class="hero">
+    <video autoplay muted loop class="background-video">
+      <source src="video/entrenamiento.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-overlay">
+      <h2 class="animated-text">¡Transforma tu cuerpo hoy!</h2>
+    </div>
+  </section>
+
+  <!-- CLASES DESTACADAS -->
+  <section class="clases-destacadas">
+    <h2>Clases Destacadas</h2>
+    <div class="cards">
+      <div class="card">Musculación</div>
+      <div class="card">CrossFit</div>
+      <div class="card">Yoga</div>
+    </div>
+  </section>
+
+  <!-- CONTADOR ANIMADO -->
+  <section class="contador">
+    <h3><span class="counter">500+</span> socios satisfechos</h3>
+  </section>
+
+  <!-- TESTIMONIOS EN CARRUSEL CSS -->
+  <section class="testimonios">
+    <h2>Lo que dicen nuestros socios</h2>
+    <div class="carrusel">
+      <input type="radio" name="testimonio" id="t1" checked>
+      <input type="radio" name="testimonio" id="t2">
+      <input type="radio" name="testimonio" id="t3">
+
+      <div class="slides">
+        <label for="t1" class="slide">“¡Entrenar aquí cambió mi vida!”</label>
+        <label for="t2" class="slide">“Entrenadores top y ambiente excelente.”</label>
+        <label for="t3" class="slide">“Resultados visibles en pocas semanas.”</label>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER CON NEWSLETTER Y MAPA -->
+  <footer>
+    <div class="newsletter">
+      <h3>Suscríbete al newsletter</h3>
+      <form>
+        <input type="email" placeholder="Tu correo electrónico" required>
+        <button type="submit">Suscribirse</button>
+      </form>
+    </div>
+  
+    <div class="redes-sociales">
+      <h3>Síguenos</h3>
+      <div class="social-icons">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+      </div>
+    </div>
+  
+    <div class="ubicacion">
+      <h3>Encuéntranos</h3>
+      <iframe
+        class="map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0198575988615!2d-122.41941568468294!3d37.774929279759224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c5f4c77e5%3A0x2e33fa89b5e7ed0f!2sSan%20Francisco!5e0!3m2!1ses!2sus!4v1610000000000"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </footer>
+ <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggleBtn = document.getElementById("toggle-dark-mode");
+    const root = document.documentElement;
+
+    // Aplicar tema guardado
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      root.setAttribute("data-theme", "dark");
+    }
+
+    toggleBtn.addEventListener("click", () => {
+      const isDark = root.getAttribute("data-theme") === "dark";
+      if (isDark) {
+        root.removeAttribute("data-theme");
+        localStorage.setItem("theme", "light");
+      } else {
+        root.setAttribute("data-theme", "dark");
+        localStorage.setItem("theme", "dark");
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

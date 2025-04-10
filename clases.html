@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clases | Gimnasio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- HEADER SIMPLE PARA NAVEGACIÓN -->
+  <header>
+    <nav class="mega-menu">
+      <h1 class="logo">Gimnasio Pro</h1>
+      <input type="checkbox" id="menu-toggle" />
+      <label for="menu-toggle" class="menu-icon">☰</label>
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="clases.html" class="activo">Clases</a></li>
+        <li><a href="entrenadores.html">Entrenadores</a></li>
+        <li><a href="precios.html">Precios</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+      <button id="toggle-dark-mode" aria-label="Alternar modo oscuro">🌓</button>
+    </nav>
+  </header>
+
+  <!-- SECCIÓN DE CLASES -->
+  <section id="clases">
+    <h2 class="section-title">Nuestras Clases</h2>
+
+    <!-- Filtros -->
+    <div class="filtros">
+      <input type="radio" id="todos" name="categoria" checked>
+      <label for="todos">Todos</label>
+
+      <input type="radio" id="musculacion" name="categoria">
+      <label for="musculacion">Musculación</label>
+
+      <input type="radio" id="crossfit" name="categoria">
+      <label for="crossfit">CrossFit</label>
+
+      <input type="radio" id="yoga" name="categoria">
+      <label for="yoga">Yoga</label>
+
+      <input type="radio" id="spinning" name="categoria">
+      <label for="spinning">Spinning</label>
+    </div>
+
+    <!-- Galería -->
+    <div class="galeria-clases">
+      <div class="tarjeta-clase musculacion">
+        <img src="img/musculacion.webp" alt="Musculación">
+        <div class="overlay">Musculación - Potencia y resistencia</div>
+      </div>
+      <div class="tarjeta-clase crossfit">
+        <img src="img/crossfit.webp" alt="CrossFit">
+        <div class="overlay">CrossFit - Entrenamiento funcional</div>
+      </div>
+      <div class="tarjeta-clase yoga">
+        <img src="img/yoga.webp" alt="Yoga">
+        <div class="overlay">Yoga - Flexibilidad y calma</div>
+      </div>
+      <div class="tarjeta-clase spinning">
+        <img src="img/Spinning.webp" alt="Spinning">
+        <div class="overlay">Spinning - Cardio intenso</div>
+      </div>
+    </div>
+
+    <!-- Tabla de horarios -->
+    <div class="horarios">
+      <table>
+        <thead>
+          <tr>
+            <th>Hora</th>
+            <th>Lunes</th>
+            <th>Martes</th>
+            <th>Miércoles</th>
+            <th>Jueves</th>
+            <th>Viernes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>08:00</td>
+            <td>Yoga</td>
+            <td>Spinning</td>
+            <td>Musculación</td>
+            <td>Yoga</td>
+            <td>CrossFit</td>
+          </tr>
+          <tr>
+            <td>10:00</td>
+            <td>Spinning</td>
+            <td>CrossFit</td>
+            <td>Yoga</td>
+            <td>Musculación</td>
+            <td>Spinning</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  
+<!-- FOOTER CON NEWSLETTER Y MAPA -->
+<footer>
+  <div class="newsletter">
+    <h3>Suscríbete al newsletter</h3>
+    <form>
+      <input type="email" placeholder="Tu correo electrónico" required>
+      <button type="submit">Suscribirse</button>
+    </form>
+  </div>
+
+  <div class="redes-sociales">
+    <h3>Síguenos</h3>
+    <div class="social-icons">
+      <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+    </div>
+  </div>
+
+  <div class="ubicacion">
+    <h3>Encuéntranos</h3>
+    <iframe
+      class="map"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0198575988615!2d-122.41941568468294!3d37.774929279759224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c5f4c77e5%3A0x2e33fa89b5e7ed0f!2sSan%20Francisco!5e0!3m2!1ses!2sus!4v1610000000000"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</footer>
+ <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggleBtn = document.getElementById("toggle-dark-mode");
+    const root = document.documentElement;
+
+    // Aplicar tema guardado
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      root.setAttribute("data-theme", "dark");
+    }
+
+    toggleBtn.addEventListener("click", () => {
+      const isDark = root.getAttribute("data-theme") === "dark";
+      if (isDark) {
+        root.removeAttribute("data-theme");
+        localStorage.setItem("theme", "light");
+      } else {
+        root.setAttribute("data-theme", "dark");
+        localStorage.setItem("theme", "dark");
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
